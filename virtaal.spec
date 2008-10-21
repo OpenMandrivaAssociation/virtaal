@@ -58,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc READ
+%doc README
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/mime/packages/*
