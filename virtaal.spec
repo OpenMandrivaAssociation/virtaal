@@ -14,8 +14,8 @@ BuildRequires:  intltool
 BuildRequires:  python-translate >= 1.2
 BuildRequires:  python-lxml
 Requires:       python-translate  >= 1.2
-Requires:       pygtk2
-Requires:       gnome-python2-gtkspell
+Requires:       pygtk2.0
+Requires:       gnome-python-gtkspell
 Requires:       xdg-utils
 
 %description
