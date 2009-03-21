@@ -1,5 +1,5 @@
 Name:           virtaal
-Version:        0.3.0
+Version:        0.3.1
 Release:        %mkrel 1
 Summary:        Localization and translation editor
 Group:          System/Internationalization
@@ -15,8 +15,10 @@ BuildRequires:  python-translate >= 1.2
 BuildRequires:  python-lxml
 Requires:       python-translate  >= 1.2
 Requires:       pygtk2.0
+Requires:	pygtk2.0-libglade
 Requires:       gnome-python-gtkspell
 Requires:	python-lxml
+Requires:       python-gobject
 Requires:       xdg-utils
 
 %description
@@ -55,7 +57,7 @@ cp -rp po/locale %{buildroot}%{_datadir}/
 %find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
