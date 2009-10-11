@@ -1,6 +1,6 @@
 Name:           virtaal
 Version:        0.4.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
@@ -20,7 +20,7 @@ Requires:       gnome-python-gtkspell
 Requires:	python-lxml
 Requires:       python-gobject
 # python-pycurl needed for open-tran.eu
-Requires:       python-pycurl
+Requires:       python-curl
 Requires:	python-simplejson
 # python-psycopg2 needed for tinytm
 Requires:       python-psycopg2
