@@ -1,6 +1,6 @@
 Name:           virtaal
-Version:        0.4.0
-Release:        %mkrel 3
+Version:        0.4.1
+Release:        %mkrel 1
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
