@@ -1,12 +1,11 @@
 Name:           virtaal
-Version:        0.4.1
+Version:        0.5.0
 Release:        %mkrel 1
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
 URL:            http://translate.sourceforge.net/wiki/virtaal/index
 Source0:        http://downloads.sourceforge.net/translate/%{name}-%{version}.tar.bz2
-Patch0:		virtaal-0.4.0-check-psycopg2.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch:      noarch
 %py_requires -d
@@ -45,7 +44,6 @@ OpenOffice.org SDF, Java (and Mozilla) .properties and Mozilla DTD.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1 -b .psycopg2
 
 %build
 %{__python} setup.py build
