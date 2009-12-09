@@ -1,6 +1,6 @@
 Name:           virtaal
 Version:        0.5.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
@@ -11,10 +11,10 @@ BuildArch:      noarch
 %py_requires -d
 BuildRequires:  gettext
 BuildRequires:  intltool
-BuildRequires:  python-translate >= 1.2
+BuildRequires:  python-translate >= 1.5.1
 BuildRequires:  python-lxml
 Requires:	iso-codes
-Requires:       python-translate  >= 1.2
+Requires:       python-translate  >= 1.5.1
 Requires:       pygtk2.0
 Requires:	pygtk2.0-libglade
 Requires:       gnome-python-gtkspell
