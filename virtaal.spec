@@ -1,11 +1,14 @@
 Name:           virtaal
-Version:        0.5.2
+Version:        0.6.1
 Release:        %mkrel 1
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
 URL:            http://translate.sourceforge.net/wiki/virtaal/index
 Source0:        http://downloads.sourceforge.net/translate/%{name}-%{version}.tar.bz2
+# (Fedora) add some patches from fedora:
+Patch0:         virtaal-0.6.1-libtranslate_error_reporting.patch
+Patch1:         virtaal-0.5.0-setup_drop_MO_generation.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArch:      noarch
 %py_requires -d
@@ -25,6 +28,7 @@ Requires:       python-gobject
 Requires:       python-curl
 Requires:	python-simplejson
 Requires:       xdg-utils
+Requires:       python-levenshtein
 # python-psycopg needed for tinytm
 Suggests:       python-psycopg2
 
@@ -44,6 +48,8 @@ OpenOffice.org SDF, Java (and Mozilla) .properties and Mozilla DTD.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p3 -b .libtranslate_error_reporting
+%patch1 -p1 -b .drop_MO_generation
 
 %build
 %{__python} setup.py build
@@ -58,10 +64,11 @@ popd
 
 %install
 rm -rf %buildroot
-%{__python} setup.py install --nodepcheck --skip-build --install-data=/usr --root=%buildroot
+%{__python} setup.py install --nodepcheck --skip-build --install-data=%{_prefix} --root=%buildroot
 
 mkdir -p %{buildroot}%{_datadir}/
 cp -rp po/locale %{buildroot}%{_datadir}/
+
 %find_lang %{name}
 
 %clean
