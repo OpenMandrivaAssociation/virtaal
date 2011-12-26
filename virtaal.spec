@@ -1,6 +1,6 @@
 Name:           virtaal
 Version:        0.6.1
-Release:        %mkrel 3
+Release:        4
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
@@ -52,6 +52,8 @@ OpenOffice.org SDF, Java (and Mozilla) .properties and Mozilla DTD.
 %patch1 -p1 -b .drop_MO_generation
 
 %build
+# Drop shebang from non-executable python files
+find virtaal -type f -and -name '*.py' -and ! -executable -exec  sed -i "sa#!/usr/bin/env pythonaa" {} \;
 %{__python} setup.py build
 ./maketranslations %{name}
 pushd po
