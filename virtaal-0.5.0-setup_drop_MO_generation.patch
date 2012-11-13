@@ -1,0 +1,36 @@
+diff -up virtaal-0.5.0-rc1/setup.py.setup_drop_MO_generation virtaal-0.5.0-rc1/setup.py
+--- virtaal-0.5.0-rc1/setup.py.setup_drop_MO_generation	2009-11-18 13:09:29.000000000 +0200
++++ virtaal-0.5.0-rc1/setup.py	2009-11-24 19:02:36.000000000 +0200
+@@ -60,23 +60,6 @@ classifiers = [
+ ]
+ #TODO: add Natural Language classifiers
+ 
+-# Compile .mo files from available .po files
+-from translate.tools.pocompile import convertmo
+-mo_files = []
+-
+-for po_filename in glob(path.join('po', '*.po')):
+-    lang = path.split(po_filename[:-3])[1] # Chop off '.po'
+-    mo_filename = path.join('mo', lang, 'virtaal.mo')
+-
+-    if not path.exists(path.join('mo', lang)):
+-        os.makedirs(path.join('mo', lang))
+-
+-    convertmo(open(po_filename), open(mo_filename, 'w'), None)
+-
+-    mo_files.append(
+-        ( path.join(TARGET_DATA_DIR, 'locale', lang, 'LC_MESSAGES'), [mo_filename])
+-    )
+-
+ # Some of these depend on some files to be built externally before running
+ # setup.py, like the .xml and .desktop files
+ options = {
+@@ -84,7 +67,7 @@ options = {
+         (path.join(TARGET_DATA_DIR, "virtaal"), glob(path.join(SOURCE_DATA_DIR, "virtaal", "*.*"))),
+         (path.join(TARGET_DATA_DIR, "virtaal", "autocorr"), glob(path.join(SOURCE_DATA_DIR, "virtaal", "autocorr", "*"))),
+         (path.join(TARGET_DATA_DIR, "icons"), glob(path.join(SOURCE_DATA_DIR, "icons", "*.*"))),
+-    ] + mo_files,
++    ],
+     'scripts': [
+         "bin/virtaal",
+     ],
