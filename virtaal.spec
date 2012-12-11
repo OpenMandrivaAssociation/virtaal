@@ -85,3 +85,85 @@ rm -rf %{buildroot}
 %{_datadir}/virtaal
 %{_datadir}/icons/*
 %{python_sitelib}/*
+
+
+%changelog
+* Mon Dec 26 2011 Denis Silakov <dsilakov@mandriva.org> 0.6.1-4
++ Revision: 745429
+- Drop shebang from non-executables python files
+
+* Sat Nov 06 2010 Funda Wang <fwang@mandriva.org> 0.6.1-3mdv2011.0
++ Revision: 594032
+- rebuild for py2.7
+
+  + Michael Scherer <misc@mandriva.org>
+    - rebuild for python 2.7
+
+* Tue Jul 27 2010 Ahmad Samir <ahmadsamir@mandriva.org> 0.6.1-1mdv2011.0
++ Revision: 562098
+- update to 0.6.1
+- add two patchs from Fedora fixing two crashes
+- require python-levenshtein
+
+* Sat Jan 30 2010 Jérôme Brenier <incubusss@mandriva.org> 0.5.2-1mdv2010.1
++ Revision: 498392
+- new version 0.5.2
+
+* Thu Dec 31 2009 Jérôme Brenier <incubusss@mandriva.org> 0.5.1-1mdv2010.1
++ Revision: 484278
+- new version 0.5.1
+
+* Wed Dec 09 2009 Jérôme Brenier <incubusss@mandriva.org> 0.5.0-2mdv2010.1
++ Revision: 475621
+- Requires / BuildRequires python-translate >= 1.5.1
+
+* Mon Dec 07 2009 Jérôme Brenier <incubusss@mandriva.org> 0.5.0-1mdv2010.1
++ Revision: 474276
+- new version 0.5.0
+- drop Patch0 (merged upstream)
+
+* Sat Nov 07 2009 Frederik Himpe <fhimpe@mandriva.org> 0.4.1-1mdv2010.1
++ Revision: 462188
+- update to new version 0.4.1
+
+* Thu Oct 15 2009 Frederik Himpe <fhimpe@mandriva.org> 0.4.0-3mdv2010.0
++ Revision: 457732
+- Requires iso-codes and python-enchant (bug #54505)
+- Only suggest python-psycopg2, as it's only needed for a tinytm plug-in
+- Check for psycopg2 instead of psycopg at start-up: both are supported
+  and the Mandriva package suggests psycopg2
+
+* Sun Oct 11 2009 Frederik Himpe <fhimpe@mandriva.org> 0.4.0-2mdv2010.0
++ Revision: 456649
+- Fix python-curl dependency (bug #54485)
+
+* Tue Aug 11 2009 Frederik Himpe <fhimpe@mandriva.org> 0.4.0-1mdv2010.0
++ Revision: 415218
+- Add Requires from Fedora
+- Install with --nodepcheck in order to not bloat BuildRequires
+- Update to new version 0.4.0
+- Update Requires and BuildRequires
+
+* Sat Mar 21 2009 Emmanuel Andry <eandry@mandriva.org> 0.3.1-1mdv2009.1
++ Revision: 360032
+- New version 0.3.1
+- add missing requires
+
+* Wed Feb 11 2009 Frederik Himpe <fhimpe@mandriva.org> 0.3.0-1mdv2009.1
++ Revision: 339543
+- update to new version 0.3.0
+
+* Tue Jan 06 2009 Funda Wang <fwang@mandriva.org> 0.2-3mdv2009.1
++ Revision: 326006
+- rebuild
+
+* Tue Nov 25 2008 Götz Waschk <waschk@mandriva.org> 0.2-2mdv2009.1
++ Revision: 306632
+- add missing dep on python-lxml
+
+* Tue Oct 21 2008 Funda Wang <fwang@mandriva.org> 0.2-1mdv2009.1
++ Revision: 296133
+- fix requires
+- import virtaal
+
+
