@@ -1,6 +1,6 @@
 Name:           virtaal
 Version:        0.6.1
-Release:        4
+Release:        5
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
