@@ -4,7 +4,7 @@ Release:        5
 Summary:        Localization and translation editor
 Group:          System/Internationalization
 License:        GPLv2+
-URL:            http://translate.sourceforge.net/wiki/virtaal/index
+URL:            https://translate.sourceforge.net/wiki/virtaal/index
 Source0:        http://downloads.sourceforge.net/translate/%{name}-%{version}.tar.bz2
 # (Fedora) add some patches from fedora:
 Patch0:         virtaal-0.6.1-libtranslate_error_reporting.patch
